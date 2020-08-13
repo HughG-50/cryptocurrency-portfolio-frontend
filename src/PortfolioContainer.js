@@ -24,20 +24,18 @@ class PortfolioContainer extends Component {
           search_results: [...data.data.currencies],
         });
       })
-      .catch((data) => {
-        debugger;
-      });
-    console.log(this.state.search_results);
+      .catch((err) => console.log(err));
   };
 
-  handleSelect = (e) => {
+  handleSelect = (curr, e) => {
     e.preventDefault();
-    const id = e.target.getAttribute('data-id');
-    const activeCurrency = this.state.search_results.filter(
-      (item) => item.id === parseInt(id)
+
+    const activeCurrency = this.state.search_results.find(
+      (item) => item.id == curr.id
     );
+
     this.setState({
-      active_currency: activeCurrency[0],
+      active_currency: activeCurrency,
       search_results: [],
     });
   };
