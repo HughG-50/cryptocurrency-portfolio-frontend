@@ -23,7 +23,8 @@ class PortfolioContainer extends Component {
 
   handleChange(e) {
     axios
-      .post('http://localhost:3000/search', {
+      // .post('http://localhost:3000/search', {
+      .post('https://mysterious-beyond-72605.herokuapp.com/search', {
         // name: this.state.name,
         search: e.target.value,
       })
@@ -57,7 +58,8 @@ class PortfolioContainer extends Component {
     let amount = this.state.amount;
 
     axios
-      .post('http://localhost:3000/calculate', {
+      // .post('http://localhost:3000/calculate', {
+      .post('https://mysterious-beyond-72605.herokuapp.com/calculate', {
         id: currency.id,
         amount: amount,
       })
