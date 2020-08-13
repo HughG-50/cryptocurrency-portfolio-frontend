@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import PortfolioItem from './PortfolioItem';
 
 const Portfolio = (props) => {
-  const portfolioItems = this.props.portfolio.map((item, index) => (
+  const portfolioItems = props.portfolio.map((item, index) => (
     <PortfolioItem key={index} item={item} />
   ));
-  const total = this.props.portfolio.reduce(
-    (total, curr) => total + curr.value,
-    0
-  );
+  const total = props.portfolio.reduce((total, curr) => total + curr.value, 0);
 
   return (
     <div>
