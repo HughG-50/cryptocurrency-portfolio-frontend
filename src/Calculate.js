@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Calculate extends Component {
   constructor(props) {
-    super(props);
+    // super(props);
   }
 
   render() {

@@ -3,7 +3,7 @@ import PortfolioItem from './PortfolioItem';
 
 class Portfolio extends Component {
   constructor(props) {
-    super(props);
+    // super(props);
   }
 
   render() {
