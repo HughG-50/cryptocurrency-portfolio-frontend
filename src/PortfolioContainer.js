@@ -5,23 +5,14 @@ import Portfolio from './Portfolio';
 import axios from 'axios';
 
 class PortfolioContainer extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    portfolio: [],
+    search_results: [],
+    active_currency: null,
+    amount: '',
+  };
 
-    this.state = {
-      portfolio: [],
-      search_results: [],
-      active_currency: null,
-      amount: '',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleAmount = this.handleAmount.bind(this);
-  }
-
-  handleChange(e) {
+  handleChange = (e) => {
     axios
       // .post('http://localhost:3000/search', {
       .post('https://mysterious-beyond-72605.herokuapp.com/search', {
@@ -37,9 +28,9 @@ class PortfolioContainer extends Component {
         debugger;
       });
     console.log(this.state.search_results);
-  }
+  };
 
-  handleSelect(e) {
+  handleSelect = (e) => {
     e.preventDefault();
     const id = e.target.getAttribute('data-id');
     const activeCurrency = this.state.search_results.filter(
@@ -49,9 +40,9 @@ class PortfolioContainer extends Component {
       active_currency: activeCurrency[0],
       search_results: [],
     });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     let currency = this.state.active_currency;
@@ -74,13 +65,13 @@ class PortfolioContainer extends Component {
       .catch((data) => {
         debugger;
       });
-  }
+  };
 
-  handleAmount(e) {
+  handleAmount = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
-  }
+  };
 
   render() {
     const searchOrCalculate = this.state.active_currency ? (
