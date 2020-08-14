@@ -13,7 +13,7 @@ const Portfolio = (props) => {
         <div className="portfolio-value--header">
           Your Total Portfolio Value Is:
         </div>
-        <div className="portfolio-value--content">{total}</div>
+        <div className="portfolio-value--content">$ {total.toFixed(2)}</div>
       </div>
       <div className="portfolio-items">{portfolioItems}</div>
     </div>

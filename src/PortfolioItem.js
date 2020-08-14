@@ -11,7 +11,7 @@ const PortfolioItem = (props) => {
 
         <div className="col">
           <div className="header">Current Price:</div>
-          <div className="text">{props.item.current_price}</div>
+          <div className="text">${props.item.current_price.toFixed(2)}</div>
         </div>
 
         <div className="col">
@@ -21,7 +21,7 @@ const PortfolioItem = (props) => {
 
         <div className="col">
           <div className="header">Current Value:</div>
-          <div className="text">{props.item.value}</div>
+          <div className="text">${props.item.value.toFixed(2)}</div>
         </div>
       </div>
     </div>

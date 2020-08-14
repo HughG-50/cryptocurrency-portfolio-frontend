@@ -16,7 +16,6 @@ class PortfolioContainer extends Component {
     axios
       // .post('http://localhost:3000/search', {
       .post('https://mysterious-beyond-72605.herokuapp.com/search', {
-        // name: this.state.name,
         search: e.target.value,
       })
       .then((data) => {
